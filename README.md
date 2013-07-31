@@ -16,6 +16,7 @@ The cookbook is simply a set of LWRPs that you can use in your own cookbook. A s
       admin_username 'postgres'
       admin_password node['postgresql']['password']['postgres']
       password 'secret'
+      grant_create_db false
     end
 
     psql_database "mydatabase" do

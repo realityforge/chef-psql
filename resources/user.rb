@@ -21,5 +21,6 @@ attribute :admin_password, :kind_of => String, :default => nil
 
 attribute :username, :kind_of => String, :name_attribute => true
 attribute :password, :kind_of => String, :required => true
+attribute :grant_create_db, :kind_of => [ TrueClass, FalseClass ], :default => false
 
 default_action :create
