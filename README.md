@@ -99,6 +99,7 @@ A set of LWRPs for interacting with postgres using the CLI.
 - admin_password:  Defaults to <code>nil</code>.
 - username: 
 - password: 
+- grant_create_db:  Defaults to <code>false</code>.
 
 ### Usage
 
@@ -110,7 +111,6 @@ The cookbook is simply a set of LWRPs that you can use in your own cookbook. A s
       admin_username 'postgres'
       admin_password node['postgresql']['password']['postgres']
       password 'secret'
-      grant_create_db false
     end
 
     psql_database "mydatabase" do
