@@ -34,16 +34,16 @@ A set of LWRPs for interacting with postgres using the CLI.
 ### Actions
 
 - create:  Default action.
-- drop: 
+- drop:
 
 ### Attribute Parameters
 
-- host: 
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- database: 
-- owner: 
+- database:
+- owner:
 - encoding:  Defaults to <code>"DEFAULT"</code>.
 - template:  Defaults to <code>nil</code>.
 - tablespace:  Defaults to <code>nil</code>.
@@ -58,12 +58,12 @@ A set of LWRPs for interacting with postgres using the CLI.
 
 ### Attribute Parameters
 
-- command: 
-- host: 
+- command:
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- dbname: 
+- dbname:
 - match:  Defaults to <code>nil</code>.
 - returns:  Defaults to <code>0</code>.
 
@@ -72,33 +72,33 @@ A set of LWRPs for interacting with postgres using the CLI.
 ### Actions
 
 - grant:  Default action.
-- revoke: 
+- revoke:
 
 ### Attribute Parameters
 
-- host: 
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- username: 
-- database: 
-- permissions: 
+- username:
+- database:
+- permissions:
 
 ## psql_user
 
 ### Actions
 
 - create:  Default action.
-- drop: 
+- drop:
 
 ### Attribute Parameters
 
-- host: 
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- username: 
-- password: 
+- username:
+- password:
 - grant_create_db:  Defaults to <code>false</code>.
 
 ### Usage
@@ -142,3 +142,4 @@ The cookbook is simply a set of LWRPs that you can use in your own cookbook. A s
 Maintainer:: Peter Donald (<peter@realityforge.org>)
 
 License:: Apache 2.0
+
