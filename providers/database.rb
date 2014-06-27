@@ -41,6 +41,24 @@ notifying_action :create do
   end
 end
 
+notifying_action :owner do
+  options = {}
+  options[:host] = new_resource.host
+  options[:port] = new_resource.port
+  options[:dbname] = 'template1'
+  options[:admin_username] = new_resource.admin_username
+  options[:admin_password] = new_resource.admin_password
+
+  command = "ALTER DATABASE \"#{new_resource.database}\" OWNER TO \"#{new_resource.owner}\""
+
+  bash "psql #{new_resource.name}" do
+    user new_resource.bash_user
+    group new_resource.bash_group
+    ignore_failure new_resource.ignore_failure
+    code Chef::PgCLI.pg_command(command, options.merge(:match => 'ALTER DATABASE'))
+  end
+end
+
 notifying_action :drop do
   options = {}
   options[:host] = new_resource.host

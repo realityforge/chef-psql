@@ -12,7 +12,7 @@
 # limitations under the License.
 #
 
-actions :create, :drop
+actions :create, :drop, :owner
 
 attribute :host, :kind_of => String, :required => true
 attribute :port, :kind_of => Integer, :default => 5432
