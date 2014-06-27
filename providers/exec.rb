@@ -24,8 +24,8 @@ notifying_action :run do
   options[:match] = new_resource.match
 
   bash "psql #{new_resource.name}" do
-    user 'postgres'
-    group 'postgres'
+    user new_resource.bash_user
+    group new_resource.bash_group
     ignore_failure new_resource.ignore_failure
     returns new_resource.returns
     code Chef::PgCLI.pg_command(new_resource.command, options)

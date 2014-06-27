@@ -33,8 +33,8 @@ notifying_action :create do
   unless_command = "select * from pg_database WHERE datname = '#{new_resource.database}'"
 
   bash "psql #{new_resource.name}" do
-    user 'postgres'
-    group 'postgres'
+    user new_resource.bash_user
+    group new_resource.bash_group
     ignore_failure new_resource.ignore_failure
     code Chef::PgCLI.pg_command(command, options.merge(:match => 'CREATE DATABASE'))
     not_if Chef::PgCLI.pg_command(unless_command, options.merge(:match => '(1 row)'))
@@ -53,8 +53,8 @@ notifying_action :drop do
   unless_command = "select * from pg_database WHERE datname = '#{new_resource.database}'"
 
   bash "psql #{new_resource.name}" do
-    user 'postgres'
-    group 'postgres'
+    user new_resource.bash_user
+    group new_resource.bash_group
     ignore_failure new_resource.ignore_failure
     code Chef::PgCLI.pg_command(command, options.merge(:match => 'DROP DATABASE'))
     only_if Chef::PgCLI.pg_command(unless_command, options.merge(:match => '(1 row)'))

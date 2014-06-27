@@ -26,8 +26,8 @@ notifying_action :create do
   unless_command = "SELECT * FROM pg_user WHERE usename='#{new_resource.username}'"
 
   bash "psql #{new_resource.name}" do
-    user 'postgres'
-    group 'postgres'
+    user new_resource.bash_user
+    group new_resource.bash_group
     ignore_failure new_resource.ignore_failure
     code Chef::PgCLI.pg_command(command, options.merge(:match => 'CREATE ROLE'))
     not_if Chef::PgCLI.pg_command(unless_command, options.merge(:match => '(1 row)'))
@@ -46,8 +46,8 @@ notifying_action :drop do
   unless_command = "SELECT * FROM pg_user WHERE usename='#{new_resource.username}'"
 
   bash "psql #{new_resource.name}" do
-    user 'postgres'
-    group 'postgres'
+    user new_resource.bash_user
+    group new_resource.bash_group
     ignore_failure new_resource.ignore_failure
     code Chef::PgCLI.pg_command(command, options.merge(:match => 'DROP ROLE'))
     only_if Chef::PgCLI.pg_command(unless_command, options.merge(:match => '(1 row)'))

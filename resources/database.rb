@@ -27,4 +27,7 @@ attribute :tablespace, :kind_of => String, :default => nil
 attribute :collation, :kind_of => String, :default => nil
 attribute :connection_limit, :kind_of => String, :default => nil
 
+attribute :bash_user, :kind_of => String, :default => 'postgres'
+attribute :bash_group, :kind_of => String, :default => 'postgres'
+
 default_action :create
