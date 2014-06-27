@@ -12,7 +12,7 @@
 # limitations under the License.
 #
 
-actions :create, :drop
+actions :create, :drop, :owner
 
 attribute :host, :kind_of => String, :required => true
 attribute :port, :kind_of => Integer, :default => 5432
@@ -26,5 +26,8 @@ attribute :template, :kind_of => String, :default => nil
 attribute :tablespace, :kind_of => String, :default => nil
 attribute :collation, :kind_of => String, :default => nil
 attribute :connection_limit, :kind_of => String, :default => nil
+
+attribute :bash_user, :kind_of => String, :default => 'postgres'
+attribute :bash_group, :kind_of => String, :default => 'postgres'
 
 default_action :create
