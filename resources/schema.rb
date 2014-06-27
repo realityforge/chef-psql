@@ -25,3 +25,5 @@ attribute :username, :kind_of => String, :required => true
 
 attribute :bash_user, :kind_of => String, :default => 'postgres'
 attribute :bash_group, :kind_of => String, :default => 'postgres'
+
+default_action :grant_usage
