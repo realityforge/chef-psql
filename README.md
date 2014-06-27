@@ -4,6 +4,12 @@
 
 A set of LWRPs for interacting with postgres using the CLI.
 
+Dependencies
+============
+
+The cookbook requires the 'psql' client utility for postgres to be installed on the node. However there is no depedence on a
+cookbook that installs this utlility. One can be found here: https://github.com/opscode-cookbooks/postgresql.git
+
 # Requirements
 
 ## Platform:
@@ -27,6 +33,7 @@ A set of LWRPs for interacting with postgres using the CLI.
 * [psql_database](#psql_database)
 * [psql_exec](#psql_exec)
 * [psql_permission](#psql_permission)
+* [psql_schema](#psql_schema)
 * [psql_user](#psql_user)
 
 ## psql_database
@@ -34,21 +41,24 @@ A set of LWRPs for interacting with postgres using the CLI.
 ### Actions
 
 - create:  Default action.
-- drop:
+- drop: 
+- owner: 
 
 ### Attribute Parameters
 
-- host:
+- host: 
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- database:
-- owner:
+- database: 
+- owner: 
 - encoding:  Defaults to <code>"DEFAULT"</code>.
 - template:  Defaults to <code>nil</code>.
 - tablespace:  Defaults to <code>nil</code>.
 - collation:  Defaults to <code>nil</code>.
 - connection_limit:  Defaults to <code>nil</code>.
+- bash_user:  Defaults to <code>"postgres"</code>.
+- bash_group:  Defaults to <code>"postgres"</code>.
 
 ## psql_exec
 
@@ -58,48 +68,72 @@ A set of LWRPs for interacting with postgres using the CLI.
 
 ### Attribute Parameters
 
-- command:
-- host:
+- command: 
+- host: 
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- dbname:
+- dbname: 
 - match:  Defaults to <code>nil</code>.
 - returns:  Defaults to <code>0</code>.
+- bash_user:  Defaults to <code>"postgres"</code>.
+- bash_group:  Defaults to <code>"postgres"</code>.
 
 ## psql_permission
 
 ### Actions
 
 - grant:  Default action.
-- revoke:
+- revoke: 
 
 ### Attribute Parameters
 
-- host:
+- host: 
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- username:
-- database:
-- permissions:
+- username: 
+- database: 
+- permissions: 
+- bash_user:  Defaults to <code>"postgres"</code>.
+- bash_group:  Defaults to <code>"postgres"</code>.
+
+## psql_schema
+
+### Actions
+
+- grant_usage: 
+
+### Attribute Parameters
+
+- host: 
+- port:  Defaults to <code>5432</code>.
+- admin_username:  Defaults to <code>nil</code>.
+- admin_password:  Defaults to <code>nil</code>.
+- database: 
+- schema: 
+- username: 
+- bash_user:  Defaults to <code>"postgres"</code>.
+- bash_group:  Defaults to <code>"postgres"</code>.
 
 ## psql_user
 
 ### Actions
 
 - create:  Default action.
-- drop:
+- drop: 
 
 ### Attribute Parameters
 
-- host:
+- host: 
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- username:
-- password:
+- username: 
+- password: 
 - grant_create_db:  Defaults to <code>false</code>.
+- bash_user:  Defaults to <code>"postgres"</code>.
+- bash_group:  Defaults to <code>"postgres"</code>.
 
 ### Usage
 
@@ -142,4 +176,3 @@ The cookbook is simply a set of LWRPs that you can use in your own cookbook. A s
 Maintainer:: Peter Donald (<peter@realityforge.org>)
 
 License:: Apache 2.0
-

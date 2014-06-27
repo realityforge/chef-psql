@@ -25,8 +25,8 @@ notifying_action :grant do
   command = "GRANT #{new_resource.permissions.join(', ')} ON DATABASE \"#{new_resource.database}\" TO \"#{new_resource.username}\""
 
   bash "psql #{new_resource.name}" do
-    user 'postgres'
-    group 'postgres'
+    user new_resource.bash_user
+    group new_resource.bash_group
     ignore_failure new_resource.ignore_failure
     code Chef::PgCLI.pg_command(command, options.merge(:match => 'GRANT'))
   end
@@ -43,8 +43,8 @@ notifying_action :revoke do
   command = "REVOKE #{new_resource.permissions.join(', ')} ON DATABASE \"#{new_resource.database}\" FROM \"#{new_resource.username}\""
 
   bash "psql #{new_resource.name}" do
-    user 'postgres'
-    group 'postgres'
+    user new_resource.bash_user
+    group new_resource.bash_group
     ignore_failure new_resource.ignore_failure
     code Chef::PgCLI.pg_command(command, options.merge(:match => 'REVOKE'))
   end

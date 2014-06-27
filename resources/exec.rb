@@ -25,4 +25,7 @@ attribute :match, :kind_of => String, :default => nil
 
 attribute :returns, :kind_of => [Array, Integer], :default => 0
 
+attribute :bash_user, :kind_of => String, :default => 'postgres'
+attribute :bash_group, :kind_of => String, :default => 'postgres'
+
 default_action :run
