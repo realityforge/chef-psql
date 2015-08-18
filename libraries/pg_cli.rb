@@ -31,6 +31,20 @@ class Chef
 
       "echo \"#{escape(command)}\" | #{prefix}psql #{args.join(" ")}#{postfix}"
     end
+
+    def self.pg_file_command(command_file, options = {})
+      args = []
+      args << "--host=#{options[:host]}" if options[:host]
+      args << "--port=#{options[:port]}" if options[:port]
+      args << "--username=#{options[:admin_username]}" if options[:admin_username]
+      args << "--dbname=#{options[:dbname]}" if options[:dbname]
+      args << "--no-psqlrc"
+      args << "--file=#{command_file}"
+
+      prefix = options[:admin_password] ? "PGPASSWORD=#{escape(options[:admin_password])} ": ''
+      postfix = options[:match] ? " | grep '#{options[:match]}'": ''
+
+      "#{prefix}psql #{args.join(" ")}#{postfix}"
+    end
   end
 end
-
