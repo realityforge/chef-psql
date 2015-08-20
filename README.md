@@ -32,6 +32,7 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 
 * [psql_database](#psql_database)
 * [psql_exec](#psql_exec)
+* [psql_exec_file](#psql_exec_file)
 * [psql_permission](#psql_permission)
 * [psql_schema](#psql_schema)
 * [psql_user](#psql_user)
@@ -41,17 +42,17 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 ### Actions
 
 - create:  Default action.
-- drop: 
-- owner: 
+- drop:
+- owner:
 
 ### Attribute Parameters
 
-- host: 
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- database: 
-- owner: 
+- database:
+- owner:
 - encoding:  Defaults to <code>"DEFAULT"</code>.
 - template:  Defaults to <code>nil</code>.
 - tablespace:  Defaults to <code>nil</code>.
@@ -68,12 +69,12 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 
 ### Attribute Parameters
 
-- command: 
-- host: 
+- command:
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- dbname: 
+- dbname:
 - match:  Defaults to <code>nil</code>.
 - returns:  Defaults to <code>0</code>.
 - bash_user:  Defaults to <code>"postgres"</code>.
@@ -84,17 +85,17 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 ### Actions
 
 - grant:  Default action.
-- revoke: 
+- revoke:
 
 ### Attribute Parameters
 
-- host: 
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- username: 
-- database: 
-- permissions: 
+- username:
+- database:
+- permissions:
 - bash_user:  Defaults to <code>"postgres"</code>.
 - bash_group:  Defaults to <code>"postgres"</code>.
 
@@ -102,17 +103,17 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 
 ### Actions
 
-- grant_usage: 
+- grant_usage:
 
 ### Attribute Parameters
 
-- host: 
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- database: 
-- schema: 
-- username: 
+- database:
+- schema:
+- username:
 - bash_user:  Defaults to <code>"postgres"</code>.
 - bash_group:  Defaults to <code>"postgres"</code>.
 
@@ -121,16 +122,16 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 ### Actions
 
 - create:  Default action.
-- drop: 
+- drop:
 
 ### Attribute Parameters
 
-- host: 
+- host:
 - port:  Defaults to <code>5432</code>.
 - admin_username:  Defaults to <code>nil</code>.
 - admin_password:  Defaults to <code>nil</code>.
-- username: 
-- password: 
+- username:
+- password:
 - grant_create_db:  Defaults to <code>false</code>.
 - bash_user:  Defaults to <code>"postgres"</code>.
 - bash_group:  Defaults to <code>"postgres"</code>.
