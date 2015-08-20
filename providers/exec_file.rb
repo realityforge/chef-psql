@@ -26,6 +26,6 @@ notifying_action :run do
     group 'postgres'
     ignore_failure new_resource.ignore_failure
     returns new_resource.returns
-    code "#{Chef::PgCLI.pg_file_command(new_resource.command_file, options)}"
+    code Chef::PgCLI.pg_file_command(new_resource.command_file, options)
   end
 end
