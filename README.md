@@ -80,6 +80,23 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 - bash_user:  Defaults to <code>"postgres"</code>.
 - bash_group:  Defaults to <code>"postgres"</code>.
 
+## psql_exec_file
+
+### Actions
+
+- run:  Default action.
+
+### Attribute Parameters
+
+- command_file:
+- host:
+- port:  Defaults to <code>5432</code>.
+- admin_username:  Defaults to <code>nil</code>.
+- admin_password:  Defaults to <code>nil</code>.
+- dbname:
+- match:  Defaults to <code>nil</code>.
+- returns:  Defaults to <code>0</code>.
+
 ## psql_permission
 
 ### Actions
@@ -103,7 +120,7 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 
 ### Actions
 
-- grant_usage:
+- grant_usage:  Default action.
 
 ### Attribute Parameters
 
