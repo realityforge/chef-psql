@@ -193,4 +193,7 @@ The cookbook is simply a set of LWRPs that you can use in your own cookbook. A s
 
 Maintainer:: Peter Donald (<peter@realityforge.org>)
 
+Contributors::
+ * André Hester
+
 License:: Apache 2.0
