@@ -22,6 +22,7 @@ attribute :admin_password, :kind_of => String, :default => nil
 attribute :username, :kind_of => String, :name_attribute => true
 attribute :password, :kind_of => String, :required => true
 attribute :grant_create_db, :kind_of => [ TrueClass, FalseClass ], :default => false
+attribute :grant_superuser, :kind_of => [ TrueClass, FalseClass ], :default => false
 
 attribute :bash_user, :kind_of => String, :default => 'postgres'
 attribute :bash_group, :kind_of => String, :default => 'postgres'

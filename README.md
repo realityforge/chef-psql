@@ -150,6 +150,7 @@ cookbook that installs this utlility. One can be found here: https://github.com/
 - username:
 - password:
 - grant_create_db:  Defaults to <code>false</code>.
+- grant_superuser:  Defaults to <code>false</code>.
 - bash_user:  Defaults to <code>"postgres"</code>.
 - bash_group:  Defaults to <code>"postgres"</code>.
 
