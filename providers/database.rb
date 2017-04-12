@@ -24,7 +24,7 @@ notifying_action :create do
 
   command = "CREATE DATABASE \"#{new_resource.database}\""
   command << " TEMPLATE = #{new_resource.template}" if new_resource.template
-  command << " ENCODING = #{new_resource.encoding}"
+  command << " ENCODING = '#{new_resource.encoding}'"
   command << " TABLESPACE = #{new_resource.tablespace}" if new_resource.tablespace
   command << " LC_CTYPE = '#{new_resource.collation}' LC_COLLATE = '#{new_resource.collation}'" if new_resource.collation
   command << " CONNECTION LIMIT = #{new_resource.connection_limit}" if new_resource.connection_limit
