@@ -2,6 +2,7 @@
 /*.iml
 /*.ipr
 /*.iws
+.idea/
 
 # Ignore the generated json file
 /metadata.json
