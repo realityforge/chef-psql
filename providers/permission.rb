@@ -14,7 +14,9 @@
 # limitations under the License.
 #
 
-notifying_action :grant do
+use_inline_resources
+
+action :grant do
   options = {}
   options[:host] = new_resource.host
   options[:port] = new_resource.port
@@ -32,7 +34,7 @@ notifying_action :grant do
   end
 end
 
-notifying_action :revoke do
+action :revoke do
   options = {}
   options[:host] = new_resource.host
   options[:port] = new_resource.port
