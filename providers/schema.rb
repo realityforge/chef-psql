@@ -12,7 +12,9 @@
 # limitations under the License.
 #
 
-notifying_action :grant_usage do
+use_inline_resources
+
+action :grant_usage do
   options = {}
   options[:host] = new_resource.host
   options[:port] = new_resource.port
